@@ -5,37 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
+const routes = require('./database')
 
-mongoose.connect('mongodb://localhost:27017/product_services', {useNewUrlParser: true, useUnifiedTopology: true})
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error'))
-db.once('open', function() {
-  console.log('connected to mongoose!')
-
-  const productsSchema = new mongoose.Schema({
-    id: Number,
-    name: String,
-    slogan: String,
-    description: String,
-    category: String,
-    default_price: String
-  })
-
-  const productInformation = mongoose.Schema({
-    id: Number,
-    name: String,
-    description: String,
-    category: String,
-    default_price: String,
-    features: [
-      {
-        feature: String,
-        value: String
-      }
-    ]
-  })
-})
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -71,4 +42,35 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+
+
+
+
 module.exports = app;
+// module.exports = db;
+
+
+
+// const productsSchema = new mongoose.Schema({
+//   id: Number,
+//   name: String,
+//   slogan: String,
+//   description: String,
+//   category: String,
+//   default_price: String
+// })
+
+// const productInformation = mongoose.Schema({
+//   id: Number,
+//   name: String,
+//   description: String,
+//   category: String,
+//   default_price: String,
+//   features: [
+//     {
+//       feature: String,
+//       value: String
+//     }
+//   ]
+// })
