@@ -73,40 +73,61 @@ const relatedSchema = new mongoose.Schema({
 ///////////////////////////////////////
 // Models /////////////////////////////
 
-const Products = mongoose.model('Products', productsSchema, 'products');
-const ProductInfo = mongoose.model('ProductInfo', productInfoSchema);
-const Styles = mongoose.model('Styles', stylesSchema);
-const Related = mongoose.model('Related', relatedSchema);
+const Products = mongoose.model('Product', productsSchema);
+const ProductInfo = mongoose.model('ProductInfo', productInfoSchema, 'productInfo');
+const Styles = mongoose.model('Styles', stylesSchema, 'styles');
+const Related = mongoose.model('RelatedWIP', relatedSchema, 'relatedWIP');
 
 
 ///////////////////////////////////////
 // Query functions ////////////////////
 const getProducts = (params, callback) => {
-  let count = params.count || 5;
+  let page = Number(params.page) || 1;
+  let count = Number(params.count) || 5;
+  let pageSkip = (page * count) - count;
 
-  Products.find((err, documents) => {
+  Products.find((err, products) => {
     if (err) {
       callback(err, null)
     } else {
-      callback(null, documents)
+      callback(null, products)
     }
   })
-  .limit(Number(count))
+  .skip(pageSkip)
+  .limit(count)
 }
 
 
-const getProductInfo = (params, callback) => {
-  ProductInfo.find({id: params.id})
+const getProductInfo = (productId, callback) => {
+  ProductInfo.find({id: productId}, (err, product) => {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, product)
+    }
+  })
 }
 
 
-const getStyles = (params, callback) => {
-  let query = '' //////////////////////////TBD
+const getStyles = (productId, callback) => {
+  Styles.find({product_id: productId}, (err, styles) => { /////////////TODO
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, styles)
+    }
+  })
 }
 
 
-const getRelated = (params, callback) => {
-  let query = '' //////////////////////////TBD
+const getRelated = (productId, callback) => {
+  Related.find((err, related) => {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, related)
+    }
+  })
 }
 
 

@@ -26,9 +26,9 @@ router.get('/products', (req, res) => {
 
 // ProductInfo //////////////////////////////
 router.get('/products/:product_id', (req, res) => {
-  let params = req.query;
+  let productId = req.params.product_id;
 
-  db.getProductInfo(params, (err, productInfo) => {
+  db.getProductInfo(productId, (err, productInfo) => {
     if (err) {
       console.error(err)
     } else {
@@ -40,9 +40,10 @@ router.get('/products/:product_id', (req, res) => {
 
 // Styles ////////////////////////////////////
 router.get('/products/:product_id/styles', (req, res) => {
-  let params = req.query;
+  let productId = req.params.product_id;
+  console.log(productId)
 
-  db.getStyles(params, (err, styles) => {
+  db.getStyles(productId, (err, styles) => {
     if (err) {
       console.error(err)
     } else (
