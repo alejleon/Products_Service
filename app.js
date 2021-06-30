@@ -52,25 +52,3 @@ module.exports = app;
 
 
 
-// const productsSchema = new mongoose.Schema({
-//   id: Number,
-//   name: String,
-//   slogan: String,
-//   description: String,
-//   category: String,
-//   default_price: String
-// })
-
-// const productInformation = mongoose.Schema({
-//   id: Number,
-//   name: String,
-//   description: String,
-//   category: String,
-//   default_price: String,
-//   features: [
-//     {
-//       feature: String,
-//       value: String
-//     }
-//   ]
-// })

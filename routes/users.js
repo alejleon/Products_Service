@@ -12,6 +12,19 @@ module.exports = router;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // {
 //   "product_id": "1",
 //   "results": [

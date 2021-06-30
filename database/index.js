@@ -75,7 +75,7 @@ const relatedSchema = new mongoose.Schema({
 
 const Products = mongoose.model('Product', productsSchema);
 const ProductInfo = mongoose.model('ProductInfo', productInfoSchema, 'productInfo');
-const Styles = mongoose.model('Styles', stylesSchema, 'styles');
+const Styles = mongoose.model('Style', stylesSchema, 'Styles');
 const Related = mongoose.model('RelatedWIP', relatedSchema, 'relatedWIP');
 
 
@@ -110,7 +110,7 @@ const getProductInfo = (productId, callback) => {
 
 
 const getStyles = (productId, callback) => {
-  Styles.find({product_id: productId}, (err, styles) => { /////////////TODO
+  Styles.find({id: Number(productId)}, (err, styles) => { /////////////TODO
     if (err) {
       callback(err, null)
     } else {
@@ -121,7 +121,8 @@ const getStyles = (productId, callback) => {
 
 
 const getRelated = (productId, callback) => {
-  Related.find((err, related) => {
+  console.log(productId, typeof productId)
+  Related.find({id: Number(productId)}, (err, related) => {
     if (err) {
       callback(err, null)
     } else {

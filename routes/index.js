@@ -54,9 +54,10 @@ router.get('/products/:product_id/styles', (req, res) => {
 
 
 router.get('/products/:product_id/related', (req, res) => {
-  let params = req.query;
+  let productId = req.params.product_id;
+  console.log(productId)
 
-  db.getRelated(params, (err, related) => {
+  db.getRelated(productId, (err, related) => {
     if (err) {
       console.error(err)
     } else {
