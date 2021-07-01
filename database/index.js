@@ -64,9 +64,8 @@ const stylesSchema = new mongoose.Schema({
 })
 
 const relatedSchema = new mongoose.Schema({
-  product_id: [
-    Number
-  ]
+  id: Number,
+  related: [Number]
 })
 
 
@@ -76,7 +75,7 @@ const relatedSchema = new mongoose.Schema({
 const Products = mongoose.model('Product', productsSchema);
 const ProductInfo = mongoose.model('ProductInfo', productInfoSchema, 'productInfo');
 const Styles = mongoose.model('Style', stylesSchema, 'Styles');
-const Related = mongoose.model('RelatedWIP', relatedSchema, 'relatedWIP');
+const Related = mongoose.model('Related', relatedSchema, 'Related');
 
 
 ///////////////////////////////////////
