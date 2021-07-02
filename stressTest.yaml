@@ -1,0 +1,30 @@
+config:
+  target: 'http://localhost:3000/products'
+  phases:
+    # - duration: 60
+    #   arrivalRate: 1
+    #   name: "warmp up"
+    # - duration: 60
+    #   arrivalRate: 50
+    #   name: "ramp up"
+    - duration: 60
+      arrivalRate: 150
+      name: "hundo/thirty"
+    # - duration: 10
+    #   arrivalRate: 300
+      # name: "thou"
+    # - duration: 3
+    #   arrivalRate: 10000
+    #   name: "then thou"
+
+scenarios:
+  - name: 'certain name'
+    flow:
+      - get:
+          url: '/14'
+      - get:
+          url: '/937/related'
+      - get:
+          url: '/483/styles'
+      - get:
+          url: '/1419/styles'
