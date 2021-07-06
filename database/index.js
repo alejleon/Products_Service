@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 // const newDB = require('../app.js')
 
 
-mongoose.connect('mongodb://localhost:27017/product_services', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost:27017/products', {useNewUrlParser: true, useUnifiedTopology: true})
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'))
