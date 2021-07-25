@@ -72,10 +72,10 @@ const relatedSchema = new mongoose.Schema({
 ///////////////////////////////////////
 // Models /////////////////////////////
 
-const Products = mongoose.model('Product', productsSchema);
-const ProductInfo = mongoose.model('ProductInfo', productInfoSchema, 'productInfo');
-const Styles = mongoose.model('Style', stylesSchema, 'Styles');
-const Related = mongoose.model('Related', relatedSchema, 'Related');
+const Products = mongoose.model('Product', productsSchema, 'products');
+const ProductInfo = mongoose.model('ProductInfo', productInfoSchema, 'product_info');
+const Styles = mongoose.model('Style', stylesSchema, 'styles');
+const Related = mongoose.model('Related_product', relatedSchema, 'related_products');
 
 
 ///////////////////////////////////////
