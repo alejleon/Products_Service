@@ -1,2 +1,2 @@
-# productServices
-Backend redesigned for the Atelier API
+# Products Service
+Redesigned back-end for an e-commerce website.
