@@ -23,4 +23,8 @@ This project is a sister project to [Thread Lightly retail portal](https://githu
 - Docker
 
 
+## Team Members 
 
+- Alex Hernandez
+- Addie Johnsen
+- Eric Handley
