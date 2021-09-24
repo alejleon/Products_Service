@@ -7,9 +7,9 @@ This project is a sister project to [Thread Lightly retail portal](https://githu
 
 
 ## Achievements
- - Built ETL pipeline to seed MongoDB with 22 milion+ records.
- - Improved retrieval speeds by over 80%
- - Worked with MongoDB embedded documents for fastest queries possible.
+ - Composed ELT pipeline using MongoDB Compass, the Mongo aggregation pipeline, and the Mongo CLI to seed database with over 22 million records. 
+ - Improved query retrieval speeds by 97% over the legacy code by taking advantage of indexing and embedded documents, decreasing response time to as little as 4ms.
+ - Maintained a 0% error rate at 1000 requests per second during stress testing.
 
 ## Technology
 
@@ -23,7 +23,8 @@ This project is a sister project to [Thread Lightly retail portal](https://githu
 - Docker
 
 
-## Requirements 
-- Node 12 or above
-- npm
-- MongoDB
+## Team Members 
+
+- Alex Hernandez
+- Addie Johnsen
+- Eric Handley
