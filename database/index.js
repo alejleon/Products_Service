@@ -137,3 +137,8 @@ module.exports = {
   getStyles,
   getRelated
 };
+
+
+
+
+// mongoimport --db=products --collection=photos --type=csv --drop --headerline --stopOnError --file=/home/al/linux/Products_Service/database/data/photos.csv
